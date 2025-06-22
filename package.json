@@ -1,0 +1,14 @@
+{
+  "name": "kermit-bot",
+  "version": "1.0.0",
+  "description": "A kermit-bot application using DiscordJS library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Santamaria",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.20.0"
+  }
+}
