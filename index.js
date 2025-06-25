@@ -3,6 +3,7 @@ const { Client, Collection, Events, GatewayIntentBits } = require("discord.js");
 const fs = require("node:fs");
 const path = require("node:path");
 const dotenv = require("dotenv");
+const http = require("http");
 
 dotenv.config();
 
@@ -66,3 +67,17 @@ client.once(Events.ClientReady, (readyClient) => {
 
 // Log in to Discord with your client's token
 client.login(process.env.DISCORD_TOKEN);
+
+// Create the HTTP server
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("Discord bot is running and listening on this port!");
+});
+
+// Define the port to listen on
+const port = process.env.PORT || 10000; // Use environment variable or default to 3000
+
+// Start the server
+server.listen(port, () => {
+  console.log(`HTTP server listening on port ${port}`);
+});
